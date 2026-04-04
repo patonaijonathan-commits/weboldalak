@@ -1,0 +1,333 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautyfly Body Center Szeged - Szépségszalon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(255, 107, 157, 0.8), rgba(196, 69, 105, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f8f8" width="1200" height="600"/><circle fill="%23ff6b9d" opacity="0.1" cx="200" cy="150" r="100"/><circle fill="%23c44569" opacity="0.1" cx="800" cy="300" r="150"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #c44569;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #c44569;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-item h3 {
+            color: #c44569;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Beautyfly Body Center</div>
+            <ul class="nav-links">
+                <li><a href="#home">Főoldal</a></li>
+                <li><a href="#services">Szolgáltatások</a></li>
+                <li><a href="#about">Rólunk</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Beautyfly Body Center</h1>
+                <p>Szépségszalon Szegeden - Ahol a szépség szárnyra kap</p>
+                <a href="#contact" class="cta-button">Időpontfoglalás</a>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <div class="container">
+                <h2>Szolgáltatásaink</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💅</div>
+                        <h3>Körömápolás</h3>
+                        <p>Professzionális manikűr és pedikűr szolgáltatások a legmodernebb technikákkal.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Arckezelések</h3>
+                        <p>Személyre szabott arckezelések minden bőrtípusra, természetes alapanyagokkal.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💆</div>
+                        <h3>Masszázs</h3>
+                        <p>Relaxáló és terápiás masszázstechnikák a teljes kikapcsolódásért.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌟</div>
+                        <h3>Testkezelések</h3>
+                        <p>Alakformáló és bőrfeszesítő kezelések a tökéletes eredményért.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👁️</div>
+                        <h3>Szempilla & Szemöldök</h3>
+                        <p>Szempilla építés, festés és szemöldök formázás szakértő kezekben.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💄</div>
+                        <h3>Sminktanácsadás</h3>
+                        <p>Alkalmi és esküvői smink, valamint személyre szabott sminktanácsadás.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>Rólunk</h2>
+                <div class="about-content">
+                    <div>
+                        <h3>Miért válassz minket?</h3>
+                        <p>A Beautyfly Body Center Szeged szívében található prémium szépségszalon, ahol a legmodernebb technológiák és természetes módszerek ötvözésével segítünk kiemelni természetes szépségedet.</p>
+                        <p>Tapasztalt szakembereink folyamatosan képzik magukat, hogy a legújabb trendeket és technikákat kínálhassuk vendégeinknek.</p>
+                        <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                            <li>Professzionális, képzett szakemberek</li>
+                            <li>Modern berendezések és technikák</li>
+                            <li>Személyre szabott kezelések</li>
+                            <li>Kellemes, relaxáló környezet</li>
+                            <li>Prémium minőségű termékek</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Filozófiánk</h3>
+                        <p>Hiszünk abban, hogy minden ember gyönyörű a maga módján. Célunk, hogy segítsünk kiemelni egyedi szépségedet és magabiztossá tegyen minden alkalomra.</p>
+                        <p>Szalonunkban a minőség és a vendégköltség áll a középpontban. Minden kezelést a legmagasabb szakmai színvonalon végzünk, miközben kellemes és pihentető környezetet biztosítunk.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Kapcsolat</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Címünk</h3>
+                        <p>Szeged<br>
+                        (Pontos cím egyeztetés alapján)</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Telefon</h3>
+                        <p><a href="tel:+36300802814" style="color: #c44569; text-decoration: none;">+36 30 080 2814</a></p>
+                        <p>Hívj minket időpontfoglalásért!</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>⏰ Nyitvatartás</h3>
+                        <p>Hétfő - Péntek: 9:00 - 19:00<br>
+                        Szombat: 9:00 - 16:00<br>
+                        Vasárnap: Zárva</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>💌 Időpontfoglalás</h3>
+                        <p>Telefonon vagy személyesen<br>
+                        Ajánljuk az előzetes időpontfoglalást</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Beautyfly Body Center Szeged. Minden jog fenntartva.</p>
+            <p>Professzionális szépségszalon szolgáltatások Szegeden</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'linear-gradient(135deg, #ff6b9d, #c44569)';
+            }
+        });
+    </script>
+</body>
+</html>
+```
