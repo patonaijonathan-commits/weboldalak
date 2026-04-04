@@ -1,0 +1,355 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papp Melinda Kozmetika - Szépségszalon Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f8f8f8;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(255,107,157,0.8), rgba(196,69,105,0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" fill="%23f8f8f8"><rect width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #c44569;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #c44569;
+        }
+
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #ff6b9d;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            height: 300px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                margin-top: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Papp Melinda Kozmetika</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Főoldal</a></li>
+                        <li><a href="#services">Szolgáltatások</a></li>
+                        <li><a href="#about">Rólam</a></li>
+                        <li><a href="#contact">Kapcsolat</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Papp Melinda Kozmetika</h1>
+                <p>Professzionális szépségápolás Szegeden</p>
+                <a href="#contact" class="btn">Foglalj időpontot</a>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section-title">Szolgáltatásaink</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💆‍♀️</div>
+                        <h3>Arckezelések</h3>
+                        <p>Személyre szabott arckezelések minden bőrtípushoz. Tisztító, hidratáló és anti-aging kezelések professzionális kozmetikumokkal.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💅</div>
+                        <h3>Manikűr & Pedikűr</h3>
+                        <p>Komplett kéz- és lábápolás, gél lakk, díszítés. Tartós és szép eredmény minőségi anyagokkal.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👁️</div>
+                        <h3>Szemöldök & Szempilla</h3>
+                        <p>Szemöldök formázás, festés, szempilla lifting és festés. Kiemeljük természetes szépségét!</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Szőrtelenítés</h3>
+                        <p>Fájdalommentes szőrtelenítés modern technológiával. Tartós eredmény kíméletes módszerekkel.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌟</div>
+                        <h3>Speciális kezelések</h3>
+                        <p>Ultrahangos arckezelés, mikrodermabráziós hámlasztás, és egyéb speciális szépségápolási szolgáltatások.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💄</div>
+                        <h3>Alkalmi smink</h3>
+                        <p>Professzionális smink esküvőkre, fotózásokra és különleges alkalmakra. Tartós és fotógén eredmény.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">Rólam</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Üdvözlöm Papp Melinda kozmetikai szalonjában! Több mint 10 éves tapasztalattal rendelkezem a szépségiparban, és szenvedélyem, hogy minden vendégem a legjobb állapotban hagyja el a szalonomat.</p>
+                        
+                        <p>Szalonunk Szeged szívében található, modern berendezésekkel és a legújabb kozmetikai technológiákkal felszerelve. Csak minőségi, bőrbarát termékeket használunk, hogy biztosítsuk a legjobb eredményt minden kezelés során.</p>
+                        
+                        <p>Célom, hogy minden vendégem egyedi igényeinek megfelelő kezelést kapjon, személyre szabott tanácsadással és kellemes, relaxáló környezetben.</p>
+                    </div>
+                    <div class="about-image">
+                        <div>
+                            <h3>Professzionális kozmetikus</h3>
+                            <p>10+ év tapasztalat</p>
+                            <p>Minőségi kezelések</p>
+                            <p>Személyre szabott megoldások</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Kapcsolat</h2>
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <h3>Címünk</h3>
+                        <p>Szeged<br>Időpont egyeztetés alapján</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <h3>Telefon</h3>
+                        <p><a href="tel:+36305531540" style="color: white; text-decoration: none;">+36 30 553 1540</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕒</div>
+                        <h3>Nyitvatartás</h3>
+                        <p>Hétfő - Péntek: 9:00 - 18:00<br>Szombat: 9:00 - 14:00<br>Vasárnap: Zárva</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Papp Melinda Kozmetika. Minden jog fenntartva.</p>
+            <p>Szépségszalon • Szeged • Tel: +36 30 553 1540</p>
+        </div>
+    </footer>
+</body>
+</html>
+```
