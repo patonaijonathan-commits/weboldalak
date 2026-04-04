@@ -1,0 +1,425 @@
+Készítettem egy professzionális, modern egy oldalas weboldalt a kozmetikai szalonnak. Mivel a konkrét adatok nem voltak megadva, példa tartalommal töltöttem fel:
+
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kozmetikus Szeged - Professzionális kozmetikai szolgáltatások</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="beauty" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23beauty)"/></svg>');
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: #c44569;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #c44569;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-placeholder {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff6b9d;
+        }
+
+        .contact-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            padding: 1rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background: #ff6b9d;
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card, .gallery-item, .contact-item {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-spa"></i> Kozmetikus Szeged</h1>
+            <p class="tagline">Professzionális szépségápolás a szív közelében</p>
+            <a href="#contact" class="cta-button">
+                <i class="fas fa-calendar-alt"></i> Időpontfoglalás
+            </a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Szolgáltatásaink</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-user-check service-icon"></i>
+                    <h3>Arckezelések</h3>
+                    <p>Professzionális arctisztítás, hidratáló és regeneráló kezelések minden bőrtípusra. Egyedi igények szerint összeállított kezelési tervek.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-eye service-icon"></i>
+                    <h3>Szempilla & Szemöldök</h3>
+                    <p>Szempillafestés, -formázás, szemöldök alakítás és festés. Hosszan tartó eredmény professzionális anyagokkal.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hand-sparkles service-icon"></i>
+                    <h3>Manikűr & Pedikűr</h3>
+                    <p>Komplett kéz- és lábápolás, géllakk felhordás, művészköröm készítés. Egészséges és szép körmök garantáltan.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cut service-icon"></i>
+                    <h3>Szőrtelenítés</h3>
+                    <p>Fájdalommentes szőrtelenítés viasszal vagy cukorpasztával. Tartós eredmény kíméletes módszerekkel.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-gem service-icon"></i>
+                    <h3>Anti-aging kezelések</h3>
+                    <p>Ránctalanító és bőrfeszesítő kezelések modern eszközökkel. Természetes fiatalító hatás.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heart service-icon"></i>
+                    <h3>Wellness & Relaxáció</h3>
+                    <p>Stresszoldó arcmasszázs, aromaterápiás kezelések. Teljes kikapcsolódás és regenerálódás.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Galéria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-camera" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Arckezelés<br>előtte-utána</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-hand-holding-heart" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Manikűr<br>munkáink</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-spa" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Szalon<br>belső terei</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-eye" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Szempilla<br>kezelések</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-leaf" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Természetes<br>kozmetikumok</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <div>
+                            <i class="fas fa-star" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                            <p>Elégedett<br>vendégek</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Elérhetőség</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Címünk</h3>
+                        <p>6720 Szeged<br>Kárász utca 1.<br>(példa cím)</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h3>Telefon</h3>
+                        <p>+36 30 123 4567<br>(példa szám)</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div
