@@ -1,0 +1,224 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Profil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 44px;
+            padding-bottom: 44px;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 77px;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .edit-btn {
+            background: transparent;
+            border: 1px solid #dbdbdb;
+            border-radius: 4px;
+            padding: 5px 9px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .profile-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 20px;
+        }
+
+        .stat {
+            font-size: 16px;
+        }
+
+        .stat-number {
+            font-weight: 600;
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .bio-line {
+            margin-bottom: 5px;
+        }
+
+        .posts-header {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #dbdbdb;
+            margin-bottom: 28px;
+        }
+
+        .posts-tab {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 0;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #262626;
+            text-decoration: none;
+            border-top: 1px solid #262626;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .post-item {
+            aspect-ratio: 1;
+            background-color: #f8f8f8;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .post-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8e8e8e;
+            font-size: 14px;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 30px;
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-stats {
+                justify-content: center;
+            }
+
+            .posts-grid {
+                gap: 3px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://scontent-mia3-3.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFkvEB98QYLBpxdBwlViD1Rkl040TwiUucOKd3Uek07c8r-Ggf-j_EefJb45y6Qm6k&_nc_ohc=oymHrNpI6cIQ7kNvwFGfBNB&_nc_gid=mfxLCOTQHXyvs9mgxBKhNQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af3xYGjYa-NVln8WDvfzxXiPP2BPWnVrz_D4FUkTwmJWbw&oe=69D72EE7&_nc_sid=8b3546" alt="Profilkép" class="profile-image">
+            
+            <div class="profile-info">
+                <h1>
+                    Instagram
+                    <button class="edit-btn">Profil szerkesztése</button>
+                </h1>
+                
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-number">1</span> bejegyzés
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span> követő
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span> követett
+                    </div>
+                </div>
+                
+                <div class="profile-bio">
+                    <div class="bio-line"><strong>Instagram</strong></div>
+                    <div class="bio-line">📍 city</div>
+                    <div class="bio-line">📞 phone</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="posts-header">
+            <a href="#" class="posts-tab">
+                <svg width="12" height="12" viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="7" height="7" fill="currentColor"/>
+                    <rect x="14" y="3" width="7" height="7" fill="currentColor"/>
+                    <rect x="3" y="14" width="7" height="7" fill="currentColor"/>
+                    <rect x="14" y="14" width="7" height="7" fill="currentColor"/>
+                </svg>
+                Bejegyzések
+            </a>
+        </div>
+        
+        <div class="posts-grid">
+            <div class="post-item">
+                <img src="https://i.ibb.co/wr63ZnB5/658930596-18742992280001321-3065685543948392803-n-jpg-stp-dst-jpg-e15-fr-p1080x1080-tt6-nc-ht-scont.jpg" alt="Bejegyzés" class="post-image">
+            </div>
+            <div class="post-item">
+                <div class="post-placeholder">Nincs kép</div>
+            </div>
+            <div class="post-item">
+                <div class="post-placeholder">Nincs kép</div>
+            </div>
+            <div class="post-item">
+                <div class="post-placeholder">Nincs kép</div>
+            </div>
+            <div class="post-item">
+                <div class="post-placeholder">Nincs kép</div>
+            </div>
+            <div class="post-item">
+                <div class="post-placeholder">Nincs kép</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
