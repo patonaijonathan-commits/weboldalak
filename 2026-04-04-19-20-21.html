@@ -1,0 +1,193 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .profession {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .gallery {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .profile-header {
+                padding: 20px;
+            }
+
+            .name {
+                font-size: 2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .gallery {
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=oymHrNpI6cIQ7kNvwFWe6VQ&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0-s06YBBVNqw6UouzF5GdsNP7TcXRkBhTD_0uaZPLBhQ&oe=69D72EE7&_nc_sid=8b3546" alt="Profilkép" class="profile-img">
+            
+            <h1 class="name">title</h1>
+            <p class="profession">categories/0</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>city</span>
+                </div>
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>phone</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2>Galéria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/658930596_18742992280001321_3065685543948392803_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=Hk0Xyyax5sAQ7kNvwHJw8EE&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af2xwd09HMsmYuJTJEq9ycHtT6SdsbCZ7UjFCzRpohb-AQ&oe=69D719F5&_nc_sid=8b3546" alt="Kép 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/658526424_18742719463001321_3988091797591404341_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=GuPHscvxaAcQ7kNvwGEAQmY&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af1-ukqMbzq3AH3hY7aR0zNN7jdM02C0aEcvlFe2M7qUXg&oe=69D71106&_nc_sid=8b3546" alt="Kép 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/660748931_18742228459001321_6805532825349864660_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=YXAGSNd1ByMQ7kNvwFJyX7S&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af3wJzSJZmABhziWO9KNBULzz99dpZ1LGnhB92EHPlTzcA&oe=69D735B6&_nc_sid=8b3546" alt="Kép 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/657386060_18740392351001321_838066009449357659_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=yw8Vi6KypjQQ7kNvwGU20kK&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=Mzg2NTA4NDUxNTMzNzc3MDQ2MQ%3D%3D.3-ccb7-5&oh=00_Af38tYX8NP5ZGHTJfjlK2VS-VM0v281L81h3cwSYgOcl8A&oe=69D72503&_nc_sid=8b3546" alt="Kép 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/658837589_18738691900001321_1840440593780332361_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=EDWq5UAzwaoQ7kNvwElp3Zt&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0eQj4ApQ46k2UxEGk5jjuNJTmo4DYBJV5J1Lwd13IJqQ&oe=69D72E53&_nc_sid=8b3546" alt="Kép 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-lax7-1.cdninstagram.com/v/t51.82787-15/657650810_18734116714001321_7372258182941246456_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08_tt6&_nc_ht=scontent-lax7-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gEIO07zEy15yX4mRFBSgv7x4Gi14r21YTt_pA3w1X9c3lYDyA5AuIUrUAtK7QjT_70&_nc_ohc=SzbkS4G0T5YQ7kNvwFwp6Ay&_nc_gid=DQB6NoHAgXTaNBEMPTh47g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af04vEZ7RCoS1LTK2lvFcwhrMjp5Co-X7LmmJI0AUN3pmA&oe=69D71FB2&_nc_sid=8b3546" alt="Kép 6">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
