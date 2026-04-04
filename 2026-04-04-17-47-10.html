@@ -1,0 +1,447 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papp Melinda Kozmetika - Szépségszalon Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav {
+            background: #2c2c2c;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background: #ff6b9d;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+
+        section {
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+        }
+
+        h2 {
+            color: #c44569;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            margin: 10px auto;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #ff6b9d;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .service-card h3 {
+            color: #c44569;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .service-card ul li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-item a:hover {
+            color: #ff6b9d;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .about {
+                padding: 2rem 1rem;
+            }
+
+            .contact {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section {
+            animation: fadeInUp 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Papp Melinda Kozmetika</h1>
+            <p>Professzionális szépségápolás Szegeden</p>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#rolunk">Rólunk</a></li>
+                <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+                <li><a href="#galeria">Galéria</a></li>
+                <li><a href="#kapcsolat">Kapcsolat</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="rolunk">
+            <div class="about">
+                <h2>Rólunk</h2>
+                <p>
+                    Üdvözöljük a Papp Melinda Kozmetika szépségszalonjában Szegeden! 
+                    Több éves szakmai tapasztalattal és folyamatos továbbképzésekkel 
+                    biztosítjuk Önnek a legmodernebb kozmetikai kezeléseket. 
+                    Célunk, hogy minden vendégünk elégedetten és megújulva távozzon 
+                    szalonunkból. Professzionális eszközökkel és kiváló minőségű 
+                    termékekkel dolgozunk.
+                </p>
+            </div>
+        </section>
+
+        <section id="szolgaltatasok">
+            <h2>Szolgáltatásaink</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Arckezelések</h3>
+                    <ul>
+                        <li>Alapkezelés</li>
+                        <li>Anti-aging kezelés</li>
+                        <li>Problémás bőr kezelése</li>
+                        <li>Hidratáló kezelés</li>
+                        <li>Peeling</li>
+                        <li>Maszkok</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Szempilla & Szemöldök</h3>
+                    <ul>
+                        <li>Szempilla festés</li>
+                        <li>Szempilla dauer</li>
+                        <li>Szemöldök formázás</li>
+                        <li>Szemöldök festés</li>
+                        <li>Szempilla lifting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Szőrtelenítés</h3>
+                    <ul>
+                        <li>Arcszőrtelenítés</li>
+                        <li>Lábszőrtelenítés</li>
+                        <li>Hónalj szőrtelenítés</li>
+                        <li>Bikini vonal</li>
+                        <li>Teljes szőrtelenítés</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <h3>Speciális kezelések</h3>
+                    <ul>
+                        <li>Mikrodermabrázió</li>
+                        <li>Ráncfeltöltés</li>
+                        <li>Kollagén kezelés</li>
+                        <li>Lympha masszázs</li>
+                        <li>Mezoterápia</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria">
+            <h2>Galéria</h2>
+            <div class="gallery">
+                <div class="gallery-item">Szalon belső</div>
+                <div class="gallery-item">Kezelőszoba</div>
+                <div class="gallery-item">Termékek</div>
+                <div class="gallery-item">Eredmények</div>
+                <div class="gallery-item">Eszközök</div>
+                <div class="gallery-item">Környezet</div>
+            </div>
+        </section>
+
+        <section id="kapcsolat">
+            <div class="contact">
+                <h2>Kapcsolat</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Címünk</h3>
+                        <p>Szeged</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Telefon</h3>
+                        <a href="tel:+36305531540">+36 30 553 1540</a>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Nyitvatartás</h3>
+                        <p>Hétfő - Péntek: 9:00 - 18:00<br>
+                        Szombat: 9:00 - 14:00<br>
+                        Vasárnap: Zárva</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>💫 Időpontfoglalás</h3>
+                        <p>Telefonon vagy személyesen</p>
+                        <a href="tel:+36305531540">Hívjon most!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Papp Melinda Kozmetika. Minden jog fenntartva. | Szeged</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+```
