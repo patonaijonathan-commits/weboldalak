@@ -1,0 +1,398 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papp Melinda Kozmetika - Szépségszalon Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600"><rect width="1000" height="600" fill="%23f8f9fa"/><circle cx="200" cy="150" r="50" fill="%23e9ecef" opacity="0.5"/><circle cx="800" cy="400" r="80" fill="%23dee2e6" opacity="0.3"/><circle cx="500" cy="300" r="60" fill="%23ced4da" opacity="0.4"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ffd700, #ffed4a);
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #667eea;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-placeholder {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #ffd700, #ffed4a);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #333;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffd700;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-placeholder {
+                width: 200px;
+                height: 200px;
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Papp Melinda Kozmetika</div>
+            <ul class="nav-links">
+                <li><a href="#home">Kezdőlap</a></li>
+                <li><a href="#services">Szolgáltatások</a></li>
+                <li><a href="#about">Rólam</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Üdvözöljük a Papp Melinda Kozmetikánál</h1>
+                <p>Professzionális szépségápolási szolgáltatások Szegeden. Tapasztalja meg a teljes körű kozmetikai kezelések világát egy barátságos és relaxáló környezetben.</p>
+                <a href="#contact" class="cta-button">Időpontfoglalás</a>
+            </div>
+        </section>
+
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Szolgáltatásaink</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Arckezelés</h3>
+                        <p>Professzionális arctisztítás és ápoló kezelések minden bőrtípusra. Egyedi igényekre szabott kezelési tervek.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💅</div>
+                        <h3>Manikűr & Pedikűr</h3>
+                        <p>Teljes körű kéz- és lábápolás, gél lakk, díszítés. Egészséges és gyönyörű körmök garantáltan.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👁️</div>
+                        <h3>Szempilla & Szemöldök</h3>
+                        <p>Szempillafestés, -görbítés, szemöldökformázás és festés. Kiemeljük természetes szépségét.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌸</div>
+                        <h3>Szőrtelenítés</h3>
+                        <p>Professzionális szőrtelenítési szolgáltatások modern eszközökkel, fájdalommentes technikákkal.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💆</div>
+                        <h3>Relaxáló Masszázs</h3>
+                        <p>Stresszoldó és regeneráló masszázs kezelések a testi és lelki harmónia megteremtéséért.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🎨</div>
+                        <h3>Smink & Styling</h3>
+                        <p>Alkalmi és esküvői smink, személyre szabott szépítési tanácsadás különleges eseményekre.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Papp Melinda</h2>
+                        <p>Több mint 10 éve dolgozom a szépségiparban, és szenvedélyem, hogy minden vendégem a lehető legszebb énjét hozhassa ki magából.</p>
+                        <p>Folyamatosan képzem magam a legújabb technikákban és trendekben, hogy mindig a legmodernebb szolgáltatásokat nyújthassam.</p>
+                        <p>Szalonomban a személyes figyelemre és a kiváló minőségre helyezem a hangsúlyt. Minden kezelés egyedi, az Ön igényeihez és bőrtípusához igazítva.</p>
+                        <p>Látogasson el hozzám Szegedre, és engedje, hogy professzionális tudásommal segítsek Önnek a szépség és a jólét érzésének elérésében!</p>
+                    </div>
+                    <div class="about-image">
+                        <div class="about-placeholder">👩‍💼</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Kapcsolat & Időpontfoglalás</h2>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3 style="margin-bottom: 2rem; font-size: 1.8rem;">Elérhetőségek</h3>
+                        <div class="contact-item">
+                            <span class="contact-icon">📍
