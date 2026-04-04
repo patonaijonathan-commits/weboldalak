@@ -1,0 +1,204 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 44px;
+            padding: 0 20px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 50px;
+            object-fit: cover;
+            border: 3px solid #dbdbdb;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-username {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .profile-stats {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .profile-stat {
+            margin-right: 40px;
+        }
+
+        .profile-stat-number {
+            font-weight: 600;
+        }
+
+        .profile-bio {
+            line-height: 1.5;
+        }
+
+        .profile-bio-item {
+            margin-bottom: 5px;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+            margin-top: 20px;
+        }
+
+        .post-item {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .post-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .post-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid #dbdbdb;
+            margin-top: 44px;
+            margin-bottom: 12px;
+        }
+
+        .tab {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            color: #8e8e8e;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-top: 1px solid transparent;
+        }
+
+        .tab.active {
+            color: #262626;
+            border-top: 1px solid #262626;
+        }
+
+        .tab-icon {
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+        }
+
+        @media (max-width: 735px) {
+            .profile-header {
+                padding: 0;
+            }
+
+            .profile-image {
+                width: 77px;
+                height: 77px;
+                margin-right: 28px;
+            }
+
+            .profile-username {
+                font-size: 24px;
+            }
+
+            .profile-stat {
+                margin-right: 20px;
+            }
+
+            .posts-grid {
+                gap: 2px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://scontent-mia3-3.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-mia3-3.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFkvEB98QYLBpxdBwlViD1Rkl040TwiUucOKd3Uek07c8r-Ggf-j_EefJb45y6Qm6k&_nc_ohc=oymHrNpI6cIQ7kNvwFGfBNB&_nc_gid=mfxLCOTQHXyvs9mgxBKhNQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af3xYGjYa-NVln8WDvfzxXiPP2BPWnVrz_D4FUkTwmJWbw&oe=69D72EE7&_nc_sid=8b3546" alt="Profilkép" class="profile-image">
+            
+            <div class="profile-info">
+                <h1 class="profile-username">Instagram</h1>
+                
+                <div class="profile-stats">
+                    <div class="profile-stat">
+                        <span class="profile-stat-number">1</span> bejegyzés
+                    </div>
+                    <div class="profile-stat">
+                        <span class="profile-stat-number">0</span> követő
+                    </div>
+                    <div class="profile-stat">
+                        <span class="profile-stat-number">0</span> követett
+                    </div>
+                </div>
+                
+                <div class="profile-bio">
+                    <div class="profile-bio-item"><strong>Instagram</strong></div>
+                    <div class="profile-bio-item">📍 city</div>
+                    <div class="profile-bio-item">📞 phone</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <a href="#" class="tab active">
+                <svg class="tab-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                </svg>
+                Bejegyzések
+            </a>
+        </div>
+
+        <div class="posts-grid">
+            <div class="post-item">
+                <img src="https://i.ibb.co/b5ZgywZb/660748931-18742228459001321-6805532825349864660-n-jpg-stp-dst-jpg-e15-fr-p1080x1080-tt6-nc-ht-scont.jpg" alt="Bejegyzés">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
