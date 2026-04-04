@@ -1,0 +1,423 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E Trend Beauty - Szépségszalon Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(196, 69, 105, 0.8), rgba(255, 107, 157, 0.8)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f8f9fa" width="1200" height="600"/><circle fill="%23ff6b9d" cx="200" cy="150" r="50" opacity="0.1"/><circle fill="%23c44569" cx="800" cy="300" r="80" opacity="0.1"/><circle fill="%23ff6b9d" cx="1000" cy="100" r="60" opacity="0.1"/></svg>');
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #c44569;
+        }
+
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #c44569;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #ffd700;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #ffd700;
+            color: #333;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #ffed4e;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">E Trend Beauty</a>
+            <ul class="nav-links">
+                <li><a href="#home">Főoldal</a></li>
+                <li><a href="#services">Szolgáltatások</a></li>
+                <li><a href="#about">Rólunk</a></li>
+                <li><a href="#contact">Kapcsolat</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>E Trend Beauty</h1>
+                    <p>Szeged legmodernebb szépségszalonja</p>
+                    <a href="#contact" class="cta-button">Időpont foglalás</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section-title">Szolgáltatásaink</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💅</div>
+                        <h3>Köröm szolgáltatások</h3>
+                        <p>Géllakk, műköröm építés, körömdíszítés professzionális minőségben.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💄</div>
+                        <h3>Smink és szempilla</h3>
+                        <p>Alkalmi smink, szempilla hosszabbítás és dúsítás tapasztalt szakemberekkel.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h3>Arckezelések</h3>
+                        <p>Tisztító arckezelés, hidratálás és anti-aging kezelések modern eszközökkel.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🧴</div>
+                        <h3>Szőrtelenítés</h3>
+                        <p>Gyanta és IPL szőrtelenítés biztonságos és hatékony módszerekkel.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💆</div>
+                        <h3>Masszázs</h3>
+                        <p>Relaxációs és terápiás masszázs szolgáltatások stressz oldásra.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👗</div>
+                        <h3>Menyasszonyi csomag</h3>
+                        <p>Komplett szépítési csomag az esküvő napjára - smink, haj, köröm.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">Rólunk</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Az E Trend Beauty szépségszalon Szeged szívében található, ahol a legmodernebb szépségápolási technológiák és a hagyományos szakértelem találkozik.</p>
+                        <p>Tapasztalt szakembereink több mint 10 éves tapasztalattal rendelkeznek a szépségiparban. Célunk, hogy minden vendégünk elégedetten és magabiztosan távozzon tőlünk.</p>
+                        <p>Szalonunkban csak minőségi termékeket használunk, és folyamatosan követjük a legújabb trendeket és technológiákat.</p>
+                    </div>
+                    <div class="about-image">
+                        <span>💎</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title" style="color: white;">Kapcsolat</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📍</span>
+                            <div>
+                                <strong>Címünk:</strong><br>
+                                6720 Szeged
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📞</span>
+                            <div>
+                                <strong>Telefon:</strong><br>
+                                <a href="tel:+36304456278" style="color: white; text-decoration: none;">+36 30 445 6278</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🕒</span>
+                            <div>
+                                <strong>Nyitvatartás:</strong><br>
+                                Hétfő - Péntek: 9:00 - 18:00<br>
+                                Szombat: 9:00 - 15:00<br>
+                                Vasárnap: Zárva
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Időpont foglalás</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" placeholder="Név" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Telefonszám" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="E-mail cím">
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="Milyen szolgáltatásra szeretne időpontot foglalni?"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Küldés</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 E Trend Beauty. Minden jog fenntartva. | Szeged</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.
