@@ -1,0 +1,316 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title - categories/0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin: 0 auto 30px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-name {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-profession {
+            font-size: 1.3em;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f8f9ff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+        }
+
+        .contact-text {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .gallery {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .gallery-title {
+            font-size: 2em;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+            position: relative;
+        }
+
+        .gallery-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+
+        .empty-slot {
+            background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 1.2em;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .profile-header {
+                padding: 30px 20px;
+            }
+
+            .profile-name {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .gallery {
+                padding: 30px 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header fade-in">
+            <img src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFOLkvdk_rKolNr1AHDp5KOCO-78_-yHWav0L6PVSwrF9cNX3ozWToPD87XJsGZeB4&_nc_ohc=oymHrNpI6cIQ7kNvwEoKbKs&_nc_gid=fFI8mLzjTS8ezL2qtbaryg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af39zSV88cLM81QYMhY4HWoZNRAzYgth3vwn5HqCXt-_9g&oe=69D72EE7&_nc_sid=8b3546" alt="Profilkép" class="profile-image">
+            
+            <h1 class="profile-name">title</h1>
+            <p class="profile-profession">categories/0</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span class="contact-text">city</span>
+                </div>
+                
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span class="contact-text">phone</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery fade-in">
+            <h2 class="gallery-title">Galéria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/dwtzsbZD/658526424-18742719463001321-3988091797591404341-n-jpg-stp-dst-jpg-e15-tt6-nc-ht-scontent-ord5-2-cdn.jpg" alt="Galéria kép 1" class="gallery-image">
+                </div>
+                <div class="gallery-item empty-slot">
+                    <span>Kép helye</span>
+                </div>
+                <div class="gallery-item empty-slot">
+                    <span>Kép helye</span>
+                </div>
+                <div class="gallery-item empty-slot">
+                    <span>Kép helye</span>
+                </div>
+                <div class="gallery-item empty-slot">
+                    <span>Kép helye</span>
+                </div>
+                <div class="gallery-item empty-slot">
+                    <span>Kép helye</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll és interaktivitás
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const img = this.querySelector('img');
+                    if (img) {
+                        // Nagyítás funkció hozzáadása később
+                        console.log('Kép kattintás:', img.src);
+                    }
+                });
+            });
+
+            // Scroll animáció
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
+```
