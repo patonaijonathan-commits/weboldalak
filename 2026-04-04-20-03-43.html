@@ -1,0 +1,210 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title - categories/0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .profile-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            padding: 40px;
+            text-align: center;
+            color: white;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .profile-profession {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .profile-location {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .profile-body {
+            padding: 40px;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .phone-icon {
+            width: 24px;
+            height: 24px;
+            fill: #667eea;
+        }
+        
+        .phone-number {
+            font-size: 1.3rem;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .phone-number:hover {
+            color: #667eea;
+        }
+        
+        .gallery {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .gallery-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #333;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            aspect-ratio: 1;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .profile-header {
+                padding: 30px 20px;
+            }
+            
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .profile-body {
+                padding: 30px 20px;
+            }
+            
+            .gallery {
+                padding: 30px 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-header">
+                <img src="https://scontent-atl3-2.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-atl3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFOLkvdk_rKolNr1AHDp5KOCO-78_-yHWav0L6PVSwrF9cNX3ozWToPD87XJsGZeB4&_nc_ohc=oymHrNpI6cIQ7kNvwEoKbKs&_nc_gid=fFI8mLzjTS8ezL2qtbaryg&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af39zSV88cLM81QYMhY4HWoZNRAzYgth3vwn5HqCXt-_9g&oe=69D72EE7&_nc_sid=8b3546" alt="title" class="profile-img">
+                <h1 class="profile-name">title</h1>
+                <p class="profile-profession">categories/0</p>
+                <p class="profile-location">city</p>
+            </div>
+            
+            <div class="profile-body">
+                <div class="contact-info">
+                    <svg class="phone-icon" viewBox="0 0 24 24">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <a href="tel:phone" class="phone-number">phone</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery">
+            <h2 class="gallery-title">Galéria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.ibb.co/5W9WgpRy/658930596-18742992280001321-3065685543948392803-n-jpg-stp-dst-jpg-e15-fr-p1080x1080-tt6-nc-ht-scont.jpg" alt="Galéria kép 1" class="gallery-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
