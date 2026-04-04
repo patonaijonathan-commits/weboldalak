@@ -1,0 +1,194 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title - categories/0</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #667eea;
+            margin-bottom: 20px;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .profile-category {
+            font-size: 1.3rem;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .profile-details {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: #667eea;
+        }
+
+        .gallery {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        .gallery-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .profile-header {
+                padding: 20px;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .profile-details {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .gallery {
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=oymHrNpI6cIQ7kNvwFBTw-5&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af3q6HsCFrTIw6qREnzUadqzoNvFLAL7b9sxkjn2HNO23w&oe=69D6F6A7&_nc_sid=8b3546" alt="Profilkép" class="profile-img">
+            
+            <h1 class="profile-name">title</h1>
+            <p class="profile-category">categories/0</p>
+            
+            <div class="profile-details">
+                <div class="detail-item">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>city</span>
+                </div>
+                <div class="detail-item">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>phone</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <h2 class="gallery-title">Galéria</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/658930596_18742992280001321_3065685543948392803_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=Hk0Xyyax5sAQ7kNvwFbSuvD&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af2433-G4IY-wfDvJsjPGcyrosEED_wFao3YlnCb3ZJUMA&oe=69D719F5&_nc_sid=8b3546" alt="Kép 1" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/658526424_18742719463001321_3988091797591404341_n.jpg?stp=dst-jpg_e15_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=GuPHscvxaAcQ7kNvwEYOczs&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af18pQH_Gl0W0XgIeZ2KjE6jR2t3lomJWlKCfZ8R_LyFeg&oe=69D71106&_nc_sid=8b3546" alt="Kép 2" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/660748931_18742228459001321_6805532825349864660_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=YXAGSNd1ByMQ7kNvwE1C3Gd&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af1tUWeds3hhrhUtsnbWQZiBZOxdjKzaD3-Tmv2uy4508w&oe=69D6FD76&_nc_sid=8b3546" alt="Kép 3" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/657386060_18740392351001321_838066009449357659_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=yw8Vi6KypjQQ7kNvwF7VmTG&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=Mzg2NTA4NDUxNTMzNzc3MDQ2MQ%3D%3D.3-ccb7-5&oh=00_Af3V4ZDyPlsk3MDGdQKBiGDvlP6d2sFUE3TdoN1upzdWjw&oe=69D72503&_nc_sid=8b3546" alt="Kép 4" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/658837589_18738691900001321_1840440593780332361_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=EDWq5UAzwaoQ7kNvwGRyuWl&_nc_gid=nTrHFTWp1air6cyLMn41GA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af17q_ANbhxE595uSrqial6qirzia65awirDNGpe_mXuDA&oe=69D6F613&_nc_sid=8b3546" alt="Kép 5" class="gallery-img">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://scontent-hou1-1.cdninstagram.com/v/t51.82787-15/657650810_18734116714001321_7372258182941246456_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08_tt6&_nc_ht=scontent-hou1-1.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFja4md80wLAjL4PyLkOGNjE-o8zeLSjEG9C23ybR7SkIHo6M4r9ObS2XajWrPw7co&_nc_ohc=SzbkS4G0T5YQ7kNvwF-xX1G&_nc_gid=nTrHFTWp1air6cyLMn41
