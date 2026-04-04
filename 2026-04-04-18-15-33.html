@@ -1,0 +1,331 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foki Boglárka - Kozmetikus & Sminkes | Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .profile-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6b9d;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+
+        .profile-text h1 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 5px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .profile-text p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        .contact-btn {
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        main {
+            margin-top: 140px;
+            padding: 40px 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services {
+            margin-bottom: 60px;
+        }
+
+        .services h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff6b9d, #c44569);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gallery {
+            margin-bottom: 60px;
+        }
+
+        .gallery h3 {
+            text-align: center;
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .contact-section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-section h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: #34495e;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #ff6b9d;
+        }
+
+        footer {
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .profile-info {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .profile-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-section {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <img src="https://instagram.fagc1-1.fna.fbcdn.net/v/t51.2885-19/305050915_1215997375609310_3736119295096197095_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fagc1-1.fna.fbcdn.net&_nc_cat=102&_nc_oc=Q6cZ2gEEgstO_lMphCOAUu5X-FH8mUbwD5CV0Qlv56lY73oKkBynFVyC2w7BNc8qujjlIIU&_nc_ohc=Gb5T895tjzIQ7kNvwGjf4MQ&_nc_gid=wDLitfxO-JvMFO_nHjVd8g&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af3KzwrY7faKO0Q3qokg_uZuu_LZncNqEM8TdHKrBxkprg&oe=69D7261B&_nc_sid=8b3546" alt="Foki Boglárka" class="profile-img">
+                    <div class="profile-text">
+                        <h1>Foki Boglárka</h1>
+                        <p>Kozmetikus & Sminkes • Szeged</p>
+                    </div>
+                </div>
+                <a href="tel:+36205009520" class="contact-btn">📞 Időpont foglalás</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>Szépségápolás szakértelemmel</h2>
+                <p>Professzionális kozmetikai kezelések és sminkelés Szegeden. Tapasztalt szakemberként segítem Önt abban, hogy a legjobb formáját hozza ki magából.</p>
+            </section>
+
+            <section class="services">
+                <h3>Szolgáltatásaim</h3>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon">✨</div>
+                        <h4>Arckezelések</h4>
+                        <p>Professzionális arctisztítás, bőrfeszesítés és anti-aging kezelések minden bőrtípusra.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">💄</div>
+                        <h4>Sminkelés</h4>
+                        <p>Alkalmi sminkelés esküvőkre, fotózásokra és különleges eseményekre.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">👁️</div>
+                        <h4>Szemöldök formázás</h4>
+                        <p>Precíz szemöldök formázás és festés, amely kiemeli az Ön egyéni vonásait.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">🌿</div>
+                        <h4>Természetes ápolás</h4>
+                        <p>Természetes alapanyagokkal készült kezelések érzékeny bőrre is.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery">
+                <h3>Munkáim</h3>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://instagram.fagc1-2.fna.fbcdn.net/v/t51.82787-15/584392093_18067625201525543_2484397405160941579_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&_nc_ht=instagram.fagc1-2.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2gEEgstO_lMphCOAUu5X-FH8mUbwD5CV0Qlv56lY73oKkBynFVyC2w7BNc8qujjlIIU&_nc_ohc=nyu5TVtgkQwQ7kNvwFLg2eM&_nc_gid=wDLitfxO-JvMFO_nHjVd8g&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=Mzc3MDkyNjU4NTU5NTcwNDIwNQ%3D%3D.3-ccb7-5&oh=00_Af2LKMSHb32KdVz-_fMO_2-0pIhbXOWH1XCICVxFFIXL_w&oe=69D70B9E&_nc_sid=8b3546" alt="Kozmetikai kezelés">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://instagram.fagc1-2.fna.fbcdn.net/v/t51.2885-15/486289993_18041931488525543_7377640299154805072_n.jpg?stp=dst-jpg_e35_p1080x1080_sh0.08_tt6&_nc_ht=instagram.fagc1-2.fna.fbcdn.net&_nc_cat=111&_nc_oc=Q6cZ2gEEgstO_lMphCOAUu5X-FH8mUbwD5CV0Qlv56lY73oKkBynFVyC2w7BNc8qujjlIIU&_nc_ohc=FO_ghQ5IBiYQ7kNvwFSFgAy&_nc_gid=wDLitfxO-JvMFO_nHjVd8g&edm=AOQ1c0wBAAAA&ccb=7-5&ig_cache_key=MzU5NDU4MDgzNjI0MzMxMTY0OA%3D%3D.3-ccb7-5&oh=00_Af0mDQELf-y1mR3ArHHBUPEwM3_-5XDenpr4Sln0Dbs1zg&
