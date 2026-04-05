@@ -1,0 +1,338 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foki Boglárka - Kozmetikus, Sminkes | Szeged</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .profile-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.3);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-info .title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        .location {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .services {
+            background: white;
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #c44569;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .services h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: #ff6b9d;
+        }
+
+        .service-card h3 {
+            color: #c44569;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .gallery {
+            padding: 4rem 0;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #c44569;
+            font-size: 2.2rem;
+            position: relative;
+        }
+
+        .gallery h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact {
+            background: linear-gradient(135deg, #c44569 0%, #8b3a62 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 15px;
+        }
+
+        .contact h2 {
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .phone-btn {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .phone-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .location-info {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h1 {
+                font-size: 2rem;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="profile-section">
+                <img src="https://scontent-phx1-1.cdninstagram.com/v/t51.2885-19/305050915_1215997375609310_3736119295096197095_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-phx1-1.cdninstagram.com&_nc_cat=102&_nc_oc=Q6cZ2gG5g8EwKqFUfpzL6JTZaS5g9Zw18Had9u8eOgU_JRbgA1VBczJbsBeu4Vy5QEWXoSw&_nc_ohc=Gb5T895tjzIQ7kNvwHSXGOb&_nc_gid=W4FPQKmlGiK4qt3xyhHEMA&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af16z2VNNeSpXxcSF96nH5ZThCirfwWGiYw1nPl9pOxXnA&oe=69D8071B&_nc_sid=8b3546" alt="Foki Boglárka profilkép" class="profile-img">
+                <div class="profile-info">
+                    <h1>Foki Boglárka</h1>
+                    <div class="title">Kozmetikus & Sminkes</div>
+                    <div class="location">📍 Szeged</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="services">
+                <h2>Szolgáltatásaim</h2>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <h3>✨ Kozmetikai kezelések</h3>
+                        <p>Professzionális arckezelések, bőrápolás és bőrfiatalítás a legmodernebb technikákkal és minőségi termékekkel.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>💄 Sminkszolgáltatás</h3>
+                        <p>Alkalmi smink, menyasszonyi smink, fotózáshoz és különleges eseményekhez. Minden alkalomhoz tökéletes megjelenés.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>👁️ Szemhéjfestés</h3>
+                        <p>Tartós szemhéjfestés és szemöldök korrrekció, hogy minden nap gyönyörű lehess minimális erőfeszítéssel.</p>
+                    </div>
+                    <div class="service-card">
+                        <h3>🌟 Tanácsadás</h3>
+                        <p>Személyre szabott bőrápolási tanácsadás és smink oktatás, hogy otthon is profin ápold magad.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery">
+                <h2>Munkáim</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://i.ibb.co/s9156GCm/473034673-18034181120525543-6453703195471566389-n-jpg-stp-dst-jpg-e15-fr-s1080x1080-tt6-nc-ht-scont.jpg" alt="Kozmetikai munka" loading="lazy">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="contact">
+            <div class="container">
+                <h2>Kapcsolat</h2>
+                <p>Foglalj időpontot még ma és tapasztald meg a professzionális kozmetikai és sminkszolgáltatásokat!</p>
+                <div class="contact-info">
+                    <a href="tel:+36205009520" class="phone-btn">
+                        <svg class="icon" viewBox="0 0 24 24">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        +36 20 500 9520
+                    </a>
+                    <div class="location-info">
+                        <svg class="icon" viewBox="0 0 24 24" style="width: 16px; height: 16px; margin-right: 8px;">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        Szeged
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Foki Boglárka - Kozmetikus & Sminkes. Minden jog fenntartva.</p>
+            <p>Szépség és gondoskodás Szegeden</p>
+        </div>
+    </footer>
+</body>
+</html>
+```
