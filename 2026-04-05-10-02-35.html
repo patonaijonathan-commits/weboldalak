@@ -1,0 +1,297 @@
+```html
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram - Profil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        .container {
+            max-width: 935px;
+            margin: 0 auto;
+            padding: 60px 20px 20px;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #dbdbdb;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            max-width: 935px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 54px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #262626;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            background: #efefef;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 14px;
+            width: 268px;
+            outline: none;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            fill: #262626;
+        }
+
+        .profile-header {
+            display: flex;
+            margin-bottom: 44px;
+            align-items: flex-start;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-right: 80px;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-username {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .edit-profile-btn {
+            background: white;
+            border: 1px solid #dbdbdb;
+            border-radius: 4px;
+            padding: 5px 9px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .profile-stats {
+            display: flex;
+            margin-bottom: 20px;
+            gap: 40px;
+        }
+
+        .stat {
+            font-size: 16px;
+        }
+
+        .stat-number {
+            font-weight: 600;
+        }
+
+        .profile-bio {
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .tabs {
+            border-top: 1px solid #dbdbdb;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .tab {
+            padding: 16px 0;
+            margin: 0 30px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8e8e8e;
+            cursor: pointer;
+            border-top: 1px solid transparent;
+        }
+
+        .tab.active {
+            color: #262626;
+            border-top-color: #262626;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .post {
+            aspect-ratio: 1;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .post-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.2s;
+            color: white;
+            font-weight: 600;
+            gap: 20px;
+        }
+
+        .post:hover .post-overlay {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 16px 20px;
+            }
+
+            .profile-header {
+                margin-bottom: 32px;
+            }
+
+            .profile-image {
+                width: 77px;
+                height: 77px;
+                margin-right: 28px;
+            }
+
+            .profile-username {
+                font-size: 22px;
+                margin-bottom: 12px;
+            }
+
+            .profile-stats {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .posts-grid {
+                gap: 3px;
+            }
+
+            .search-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Instagram</a>
+            <input type="text" placeholder="Keresés" class="search-bar">
+            <div class="nav-icons">
+                <svg class="nav-icon" viewBox="0 0 24 24">
+                    <path d="M9.005 16.545a2.997 2.997 0 012.997-2.997A2.997 2.997 0 0115 16.545V22h-5.995v-5.455z"></path>
+                    <circle cx="12.005" cy="7.005" r="4.005"></circle>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="profile-header">
+            <img src="https://scontent-lga3-2.cdninstagram.com/v/t51.82787-19/550891366_18667771684001321_1383210656577177067_n.jpg?stp=dst-jpg_s320x320_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-lga3-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2gFW6t7YThafZiZlsUyX4qV_Wn9lHn6UcPC6nBnJj5R6s-krYceYF2innL_C8gNlQjS163t73vFOZA1TYaTtto-g&_nc_ohc=oymHrNpI6cIQ7kNvwFLa2ra&_nc_gid=xEgrdDveLM5ZouulqOUbbw&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_Af0Yauq18wO4acGxMF0BF7HTuIefrgWfpWYtpgPyGkmzYg&oe=69D7D7A7&_nc_sid=8b3546" alt="Profilkép" class="profile-image">
+            
+            <div class="profile-info">
+                <div class="profile-username">
+                    Instagram
+                    <button class="edit-profile-btn">Profil szerkesztése</button>
+                </div>
+                
+                <div class="profile-stats">
+                    <div class="stat">
+                        <span class="stat-number">1</span> bejegyzés
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">245</span> követő
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">180</span> követés
+                    </div>
+                </div>
+                
+                <div class="profile-bio">
+                    <div class="profile-name">Instagram</div>
+                    <div>city</div>
+                    <div>phone</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active">Bejegyzések</div>
+            <div class="tab">Mentett</div>
+            <div class="tab">Címkézett</div>
+        </div>
+
+        <div class="posts-grid">
+            <div class="post">
+                <img src="https://i.ibb.co/dwtzsbZD/658526424-18742719463001321-3988091797591404341-n-jpg-stp-dst-jpg-e15-tt6-nc-ht-scontent-ord5-2-cdn.jpg" alt="Bejegyzés">
+                <div class="post-overlay">
+                    <span>❤️ 42</span>
+                    <span>💬 3</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+```
